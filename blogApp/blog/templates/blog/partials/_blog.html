@@ -1,0 +1,21 @@
+{% load static %}
+
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-md-4 mx-auto my-auto">
+            {% comment %} <img src="{% static 'img/'|add:blog.image %}" class="img-fluid center" alt="..."> {% endcomment %}
+            <img src="{{blog.image.url}}" class="img-fluid center" alt="...">
+
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <a href="{% url 'blog_details' blog.slug %}" class="nav-link"><h5 class="card-title">{{blog.title}}</h5></a>
+                {% if blog.description|length < 150 %}
+                <p class="card-text mx-3">{{blog.description|safe }}</p>
+                {% endif %}
+                
+                <p class="card-text mx-3"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>

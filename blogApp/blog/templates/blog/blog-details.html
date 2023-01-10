@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Blog Details
+{%endblock %} {% block content %}
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4 mx-auto my-auto">
+            {% comment %}
+            <img
+              src="{% static 'img/'|add:blog.image %}"
+              class="img-fluid center"
+              alt="..."
+            />
+            {% endcomment %}
+            <img src="{{blog.image.url}}" class="img-fluid center" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{blog.title}}</h5>
+              <div class="card-text mx-3">{{ blog.description|safe }}</div>
+            </div>
+          </div>
+       <div>
+        {% if blog.file %}
+        <iframe src="{{blog.file.url}}" height="600" width="372"></iframe>
+        <a target='_blank' href="{{blog.file.url}}">All pdf</a>
+        {% endif %}
+        </div 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
