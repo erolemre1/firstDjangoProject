@@ -11,3 +11,6 @@ urlpatterns = [
     path("category/<slug:slug>", views.blogs_by_category, name="blogs_by_category"),
     path("blogs/<slug:slug>", views.blog_details,name="blog_details"),
 ]
+
+
+

@@ -79,5 +79,6 @@ def blog_details(request, slug):
     return render(request, "blog/blog-details.html", {"blog": selectedBlog})
 
 
+
 def blogs_by_category(request, slug):
     pass
